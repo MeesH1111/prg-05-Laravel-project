@@ -3,7 +3,28 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+//Route::get('/about-us', function () {
+//    $company = 'Hogeschool Rotterdam';
+//    return view('about-us', [
+//        'company' => $company
+//    ]);
+//})->name('about-us.hogeschool');
+
+Route::get('/about-us', [\App\Http\Controllers\AboutUsController::class, 'index']);
+
+
+Route::get('contact/{id?}', function(string $id='') {
+    $id = '1';
+    $message = 'Je contact gegevens';
+    return view('contact', [
+        'id' => $id,
+        'message' => $message
+    ]);
+});
+
+Route::resource('products', \App\Http\Controllers\ProductController::class);
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
