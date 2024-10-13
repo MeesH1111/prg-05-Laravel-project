@@ -1,3 +1,29 @@
+## 13-10-2024 | Zondag 
+* User Stories bedacht en opgeschreven
+* ERD voor dit project gemaakt
+#### User Stories:
+| User Stories                                                                          |                                                                              DoD                                                                              | MoSCoW |
+|:--------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------:|-------:|
+| Als **gebruiker** wil ik                                                              |                                                                                                                                                               |        |
+| Een account aan kunnen maken                                                          |                     Er is een registratie pagina waar de gebruiker een account aan kan maken. Met **naam**, **e-mail** en **wachtwoord**                      |      M |
+| kunnen inloggen                                                                       |                                   Er is een inlog pagina waaar de gebruiker kan inloggen. Met **e-mail** en **wachtwoord**                                    |      M |
+| de mogelijkheid om mijn wachtwoord te veranderen als ik het vergeten ben              |                                   Er is een lijnkje op de inlogpagina naar een pagina waar je je wachtwoord kan veranderen                                    |      C |
+| dat de website veilig is en gebruik maakt van validatie                               |                            Bij invoervelden word gebruikgemaakt van verplichte velden. Er kan **geen** Javascript in getypt worden                            |      S |
+| mijn gegevens kunnen aanpassen                                                        |                                               Er is een pagina waar de gebruiker zijn gegevens kunnen aanpassen                                               |      C |
+| een nieuw item kunnen aanmaken en als enige dit item kunnen aanpassen                 | Als een gebruiker is ingelogd is er de mogelijkheid om naar een pagina te gaan waar je een item kan aanmaken. Bij het aangemaakte item staat een bewerk knop. |      M |
+| kunnen zoeken naar bepaalde items, met daarbij bepaalde filters die ik aan kan zetten |                                     Bovenaan de pagina met items staat een zoekbalk. Ernaast staan verschillende filters.                                     |      M |
+| een beschrijving kunnen toevoegen aan mijn profiel (kan misschien nog veranderen)     |                 Dit kan pas nadat de gebruiker twee keer een item heeft gemaakt. Het tellen moet met een losse query (Eloquent) gedaan worden                 |      S |
+| Als **admin** wil ik                                                                  |                                                                                                                                                               |        |
+| kunnen inloggen                                                                       |                                      Er is een inlogpagina waar de admin kan inloggen. Met **e-mail** en **wachtwoord**.                                      |      M |
+| alle items kunnen bewerken en verwijderen                                             |                                             Als er als admin is ingelogd staat er een bewerk knop bij alle items                                              |      M |
+
+#### ERD:
+![ProjectERD.png](/_changelog/images/ProjectERD.png)
+
+
+
+
+
 ## 12-10-20204 | Zaterdag
 * Alle Routes en Controllers opdrachten gemaakt
 
