@@ -1,3 +1,8 @@
+## 14-10-2024 | Maandag
+* Met components gewerkt
+* Alle opdrachten van les 4 gemaakt
+* ERD Geüpdate
+
 ## 13-10-2024 | Zondag 
 * User Stories bedacht en opgeschreven
 * ERD voor dit project gemaakt
@@ -18,7 +23,7 @@
 | alle items kunnen bewerken en verwijderen                                             |                                             Als er als admin is ingelogd staat er een bewerk knop bij alle items                                              |      M |
 
 #### ERD:
-![ProjectERD.png](/_changelog/images/ProjectERD.png)
+![ProjectERDv2.png](/_changelog/images/ProjectERDv2.png)
 
 
 

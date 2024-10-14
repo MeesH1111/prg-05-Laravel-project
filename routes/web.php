@@ -11,20 +11,10 @@ use Illuminate\Support\Facades\Route;
 //})->name('about-us.hogeschool');
 
 Route::get('/about-us', [\App\Http\Controllers\AboutUsController::class, 'index']);
+Route::get('/contact/{id?}', [\App\Http\Controllers\ContactController::class, 'index']);
+Route::resource('products', \App\Http\Controllers\ProductController::class)->middleware('auth');
 
-
-Route::get('contact/{id?}', function(string $id='') {
-    $id = '1';
-    $message = 'Je contact gegevens';
-    return view('contact', [
-        'id' => $id,
-        'message' => $message
-    ]);
-});
-
-Route::resource('products', \App\Http\Controllers\ProductController::class);
-
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -37,5 +27,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+Route::get('/register', function () {
+    return view('auth.register');
+});
+
+
 
 require __DIR__.'/auth.php';
