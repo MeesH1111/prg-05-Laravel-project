@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 //    ]);
 //})->name('about-us.hogeschool');
 
-Route::get('/about-us', [\App\Http\Controllers\AboutUsController::class, 'index']);
+Route::get('/about-us', [\App\Http\Controllers\AboutUsController::class, 'index'])->name('about-us');
 Route::get('/contact/{id?}', [\App\Http\Controllers\ContactController::class, 'index']);
 Route::resource('products', \App\Http\Controllers\ProductController::class)->middleware('auth');
 

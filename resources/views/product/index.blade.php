@@ -27,6 +27,8 @@
     @auth()
         <h1>About {{$company}}</h1>
         <p>Je bent wel ingelogd</p>
+        <p>Item: {{ $item }}</p>
+
     @endauth
 
     @guest()
