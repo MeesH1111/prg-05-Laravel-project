@@ -1,3 +1,8 @@
+## 15-10-2024 | Dinsdag
+* Met models en Migration gewerkt
+* Alle opdrachten  van les 5 gemaakt
+* ERD Geüpdate
+
 ## 14-10-2024 | Maandag
 * Met components gewerkt
 * Alle opdrachten van les 4 gemaakt
