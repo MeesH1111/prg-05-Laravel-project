@@ -22,13 +22,12 @@
 
 
 </nav>
-<body>
+<a>
     @auth()
         <h1>ITEMS</h1>
         @foreach($items as $item)
-                <li>Item name: {{ $item['name']  }}</li>
-                <li>Item description {{ $item['description'] }}</li>
-                <li>Item tags {{ $item['tags'] }}</li>
+                <li>Item name: {{ $item->name  }}</li>
+                <a href="{{ route('products.show', $item->id) }}">Inspecteren</a>
                 <p>---------------------------------------------<p>
 
 

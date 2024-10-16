@@ -8,7 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Product.show</p>
+    <h1>Product.show</h1>
+    <h2>{{ $item->name }}</h2>
     <p>Laat hier het speciefieke item uit de database zien</p>
+    <p>ID: {{ $item->id }}</p>
+    <p>Description: {{ $item->description }}</p>
+    <p>Tags: {{ $item->tags }}</p>
+    <a href="{{ route('products.index') }}">Terug</a>
+
+
 </body>
 </html>

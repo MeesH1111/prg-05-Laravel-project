@@ -20,7 +20,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return view('review.create');
     }
 
     /**
@@ -61,6 +61,6 @@ class ReviewController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return view('review.index');
     }
 }
