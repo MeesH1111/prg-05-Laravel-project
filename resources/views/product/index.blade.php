@@ -23,12 +23,16 @@
 
 </nav>
 <body>
-    <h1>product.index</h1>
     @auth()
-        <h1>About {{$company}}</h1>
-        <p>Je bent wel ingelogd</p>
-        <p>Item: {{ $item }}</p>
+        <h1>ITEMS</h1>
+        @foreach($items as $item)
+                <li>Item name: {{ $item['name']  }}</li>
+                <li>Item description {{ $item['description'] }}</li>
+                <li>Item tags {{ $item['tags'] }}</li>
+                <p>---------------------------------------------<p>
 
+
+        @endforeach
     @endauth
 
     @guest()

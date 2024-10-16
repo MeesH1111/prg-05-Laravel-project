@@ -13,22 +13,20 @@ class ProductController extends Controller
      */
     public function index()
     {
-
-        foreach (Item::all() as $item) {
-            echo $item->id;
-            echo $item->name;
-            echo $item->description;
-            echo $item->tags;
-            echo $item->user_id;
-        }
+        $items = Item::all();
 
         $company = 'Hogeschool Rotterdam';
-        return view('product.index', compact('company', 'item'));
+        return view('product.index', compact('company', 'items'));
 
 
     }
 
-//    public function show(item $item) {
-//        $item =  Item::find(1);
-//    }
+    public function show(item $item) {
+        return view('product.show', compact('item'));
+    }
+
+    public function create()
+    {
+        return view('product.create');
+    }
 }
