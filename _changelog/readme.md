@@ -1,5 +1,6 @@
 ## 17-10-2024 | Donderdag
 * Verder gewerkt aan de opdrachten van les 6. Er is nu een formulier waar je een review kan schrijven over een item
+* Ervoor gezorgd dat een review word opgeslagen in de databese
 
 ## 16-10-2024 | Woensdag
 * Ervoor gezorgd dat er nu op items in de array geklikt kan worden op de products pagina. 
