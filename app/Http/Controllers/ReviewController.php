@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Models\Review;
 use Illuminate\Http\Request;
 
@@ -18,9 +19,11 @@ class ReviewController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id)
     {
-        return view('review.create');
+        $Review = Review::find($id);
+        $item = Item::find($id);
+        return view('review.create', compact('Review', 'item'));
     }
 
     /**
@@ -37,7 +40,9 @@ class ReviewController extends Controller
     public function show(string $id)
     {
         $Review = Review::find($id);
-        return view('review.show', compact('Review'));
+        $item = Item::find($id);
+
+        return view('review.show', compact('Review' , 'item'));
     }
 
     /**

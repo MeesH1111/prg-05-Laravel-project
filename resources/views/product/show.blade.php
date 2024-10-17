@@ -14,7 +14,12 @@
     <p>ID: {{ $item->id }}</p>
     <p>Description: {{ $item->description }}</p>
     <p>Tags: {{ $item->tags }}</p>
+    @if($review->id >= 0)
+        <h2>Review: {{ $review->description }}</h2>
+    @endif
+    <a href="{{ route('review.show', $review->id) }}">Schrijf een review</a>
     <a href="{{ route('products.index') }}">Terug</a>
+
 
 
 </body>

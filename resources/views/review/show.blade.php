@@ -8,6 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-    <p></p>
+<h1>Schrijf een review voor {{ $item->name }}</h1>
+<form action= "{{ url('products') }}" method="post">
+    <label for="name">Name Review:</label>
+    <input type="text" id="name" name="name">
+
+    <label for="description">Description Review:</label>
+    <input type="text" id="description" name="description">
+
+    <button type="submit">Submit</button>
+</form>
 </body>
 </html>

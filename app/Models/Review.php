@@ -8,8 +8,5 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Review extends Model
 {
-    public function comments(): hasMany
-    {
-        return $this->hasMany(Review::class);
-    }
+
 }
