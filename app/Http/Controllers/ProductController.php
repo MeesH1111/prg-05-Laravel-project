@@ -25,8 +25,9 @@ class ProductController extends Controller
     public function show($id) {
 
         $review = Review::find($id);
+        $reviews = Review::all();
         $item = Item::find($id);
-        return view('product.show', compact('item', 'review'));
+        return view('product.show', compact('item', 'review', 'reviews'));
     }
 
     public function create()
@@ -35,6 +36,10 @@ class ProductController extends Controller
     }
 
     public function destroy(item $item) {
+
+    }
+
+    public function store(Request $request) {
 
     }
 }

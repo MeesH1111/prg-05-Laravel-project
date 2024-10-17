@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Item;
 use App\Models\Review;
+use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -29,17 +32,24 @@ class ReviewController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, $id)
+    public function store(Request $request): RedirectResponse
     {
-        $item = Item::find($id);
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-        ]);
 
-        Review::create($validatedData);
+        $item = Item::find($request->id);
 
-        return view('product.show', $item->id);
+        $user_id = auth()->id();
+        $item_id = $item->id;
+
+        $review = new Review;
+
+        $review->name = $request->name;
+        $review->description = $request->description;
+        $review->user_id = $user_id;
+        $review->item_id = $item_id;
+
+        $review->save();
+
+        return redirect()->route('products.show', $item->id);
 
     }
 

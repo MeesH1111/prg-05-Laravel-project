@@ -9,8 +9,10 @@
 </head>
 <body>
     <h1>Schrijf een review voor {{ $item->name }}</h1>
-    @csrf
-    <form action= "{{ route('products.store', $item->id) }}" method="post">
+    <form action= "{{ route('review.store', $item->id) }}" method="post">
+        @csrf
+        <input type="hidden" name="id" value="{{ $item->id }}">
+
         <label for="name">Name Review:</label>
         <input type="text" id="name" name="name">
 
