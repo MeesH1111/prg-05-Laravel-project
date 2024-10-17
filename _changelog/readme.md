@@ -1,3 +1,12 @@
+## 17-10-2024 | Donderdag
+* Verder gewerkt aan de opdrachten van les 6. Er is nu een formulier waar je een review kan schrijven over een item
+
+## 16-10-2024 | Woensdag
+* Ervoor gezorgd dat er nu op items in de array geklikt kan worden op de products pagina. 
+Dit laat nu een gedetaileerd overzicht zien van het item
+* Begonnen met de opdrachten van les 6
+* Database gemaakt voor de reviews. Met daarbij de Controller, Model en View
+
 ## 15-10-2024 | Dinsdag
 * Met models en Migration gewerkt
 * Alle opdrachten  van les 5 gemaakt
