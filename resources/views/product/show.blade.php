@@ -8,17 +8,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Product.show</h1>
-    <h2>{{ $item->name }}</h2>
-    <p>Laat hier het speciefieke item uit de database zien</p>
+    <h1>{{ $item->name }}</h1>
     <p>ID: {{ $item->id }}</p>
     <p>Description: {{ $item->description }}</p>
     <p>Tags: {{ $item->tags }}</p>
     @if($review->id >= 0)
-        <h2>Review: {{ $review->description }}</h2>
+        <h2>Reviews: </h2>
+        <p>{{ $review->description }}</p>
     @endif
     <a href="{{ route('review.show', $review->id) }}">Schrijf een review</a>
-    <a href="{{ route('products.index') }}">Terug</a>
+    <div>
+        <a href="{{ route('products.index') }}">Terug</a>
+    </div>
 
 
 

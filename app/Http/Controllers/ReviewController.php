@@ -29,9 +29,18 @@ class ReviewController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $item = Item::find($id);
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        Review::create($validatedData);
+
+        return view('product.show', $item->id);
+
     }
 
     /**

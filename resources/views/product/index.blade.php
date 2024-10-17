@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<body>
 <nav>
     <a href="{{ url('/') }}">Welcome</a>
     <a href="{{ url('/about-us') }}">About us</a>
@@ -22,7 +23,7 @@
 
 
 </nav>
-<a>
+
     @auth()
         <h1>ITEMS</h1>
         @foreach($items as $item)
