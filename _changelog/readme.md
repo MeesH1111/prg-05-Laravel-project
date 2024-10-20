@@ -1,4 +1,7 @@
-## 19-10-2024 | Donderdag
+## 20-10-2024 | Zondag
+* Ervoor gezorgd dat de reviews bij een bepaald item alleen horen bij dat item. En niet dat een item alle reviews van alle items laat zien
+
+## 19-10-2024 | Zaterdag
 * ERD Geüpdate
 * Er kan nu een item worden toegevoegd op de website. Dit item komt ook in de database
 * Er staan nu meer details bij de lijst met items. Zoals wie het heeft toegevoegd en de tags
