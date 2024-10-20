@@ -1,3 +1,9 @@
+## 19-10-2024 | Donderdag
+* ERD Geüpdate
+* Er kan nu een item worden toegevoegd op de website. Dit item komt ook in de database
+* Er staan nu meer details bij de lijst met items. Zoals wie het heeft toegevoegd en de tags
+
+
 ## 17-10-2024 | Donderdag
 * Verder gewerkt aan de opdrachten van les 6. Er is nu een formulier waar je een review kan schrijven over een item
 * Ervoor gezorgd dat een review word opgeslagen in de databese
@@ -38,7 +44,7 @@ Dit laat nu een gedetaileerd overzicht zien van het item
 | alle items kunnen bewerken en verwijderen                                             |                                             Als er als admin is ingelogd staat er een bewerk knop bij alle items                                              |      M |
 
 #### ERD:
-![ProjectERDv2.png](/_changelog/images/ProjectERDv2.png)
+![ProjectERDv3.png](/_changelog/images/ProjectERDv3.png)
 
 
 
