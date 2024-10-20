@@ -26,11 +26,10 @@ class ProductController extends Controller
 
     public function show(string $id) {
 
-        $review = Review::find($id);
-        $reviews = Review::all();
+        $reviews = Review::where('item_id', $id)->get();
         $item = Item::find($id);
 
-        return view('product.show', compact('item', 'review', 'reviews'));
+        return view('product.show', compact('item', 'reviews'));
     }
 
     public function create()

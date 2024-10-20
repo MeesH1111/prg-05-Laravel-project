@@ -9,13 +9,14 @@
 </head>
 <body>
     <h1>{{ $item->name }}</h1>
-    <p>ID: {{ $item->id }}</p>
-    <p>Description: {{ $item->description }}</p>
-    <p>Tags: {{ $item->tags }}</p>
+    <li>ID: {{ $item->id }}</li>
+    <li>Description: {{ $item->description }}</li>
+    <li>Tags: {{ $item->tags }}</li>
     <h2>Reviews:</h2>
     @foreach($reviews as $review)
         <h3>{{ $review->name }}</h3>
         <p>{{ $review->description }}</p>
+        <p>Geschreven door: {{$review->user ? $review->user->name : "Onbekend"}}, Geplaatst op: {{ $review->created_at }}</p>
         <p>---------------------------------------------</p>
     @endforeach
     <a href="{{ route('review.show', $item->id) }}">Schrijf een review</a>

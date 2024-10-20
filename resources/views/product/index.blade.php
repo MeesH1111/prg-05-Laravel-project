@@ -29,8 +29,10 @@
         <h1>ITEMS</h1>
         @foreach($items as $item)
                 <li>Item name: {{ $item->name  }}</li>
-                <li>Gemaakt door: {{ $item->user ? $item->user->name : "Onbekend" }}</li>
+                <li>Geplaatst door: {{ $item->user ? $item->user->name : "Onbekend" }}</li>
+                <li>Geplaatst op: {{ $item->created_at }}</li>
                 <li>Tags: {{ $item->tags }}</li>
+
                 <a href="{{ route('products.show', $item->id) }}">Inspecteren</a>
                 <p>---------------------------------------------<p>
 
@@ -39,8 +41,8 @@
     @endauth
 
     @guest()
-        <h1>About {{$company}}</h1>
-        <p>Log in om alle items te zien</p>
+        <h1>ITEMS</h1>
+        <p>Je bent niet ingelogd. Log in om alle items te zien.</p>
     @endguest
 </body>
 </html>
