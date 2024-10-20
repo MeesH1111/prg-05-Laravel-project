@@ -8,6 +8,24 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Product.create</p>
+<h1>Maak een Item</h1>
+<form action= "{{ route('products.store') }}" method="post">
+    @csrf
+
+    <label for="name">Name Item:</label>
+    <input type="text" id="name" name="name">
+
+    <label for="description">Description Item:</label>
+    <input type="text" id="description" name="description">
+
+    <label for="tags">Tags Item:</label>
+    <input type="text" id="tags" name="tags">
+
+    <button type="submit">Submit</button>
+
+    <div>
+        <a href="{{ route('products.index') }}">Terug</a>
+    </div>
+</form>
 </body>
 </html>

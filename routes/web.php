@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/about-us', [\App\Http\Controllers\AboutUsController::class, 'index'])->name('about-us');
 Route::get('/contact/{id?}', [\App\Http\Controllers\ContactController::class, 'index']);
-Route::resource('products', \App\Http\Controllers\ProductController::class)->middleware('auth');
+Route::resource('products', \App\Http\Controllers\ProductController::class);
 Route::resource('review', \App\Http\Controllers\ReviewController::class)->middleware('auth');
 
 

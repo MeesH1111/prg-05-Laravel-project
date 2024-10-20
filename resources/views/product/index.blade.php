@@ -19,6 +19,7 @@
     @endguest
     @auth()
         <a href="{{ url('/dashboard') }}">Uitloggen</a>
+        <a href="{{ route('products.create') }}">Item toevoegen</a>
     @endauth
 
 
@@ -28,6 +29,8 @@
         <h1>ITEMS</h1>
         @foreach($items as $item)
                 <li>Item name: {{ $item->name  }}</li>
+                <li>Gemaakt door: {{ $item->user ? $item->user->name : "Onbekend" }}</li>
+                <li>Tags: {{ $item->tags }}</li>
                 <a href="{{ route('products.show', $item->id) }}">Inspecteren</a>
                 <p>---------------------------------------------<p>
 
@@ -37,7 +40,7 @@
 
     @guest()
         <h1>About {{$company}}</h1>
-        <p>Je bent niet ingelogd. Je bent hier als gast</p>
+        <p>Log in om alle items te zien</p>
     @endguest
 </body>
 </html>

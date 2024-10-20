@@ -6,6 +6,7 @@ use App\Models\empty;
 use App\Models\Item;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ProductController extends Controller
 {
@@ -15,18 +16,20 @@ class ProductController extends Controller
     public function index()
     {
         $items = Item::all();
+        $user = Item::with('user')->get();
 
         $company = 'Hogeschool Rotterdam';
-        return view('product.index', compact('company', 'items'));
+        return view('product.index', compact('company', 'items', 'user'));
 
 
     }
 
-    public function show($id) {
+    public function show(string $id) {
 
         $review = Review::find($id);
         $reviews = Review::all();
         $item = Item::find($id);
+
         return view('product.show', compact('item', 'review', 'reviews'));
     }
 
@@ -41,5 +44,16 @@ class ProductController extends Controller
 
     public function store(Request $request) {
 
+        $product = new Item;
+        $user_id = request()->user()->id;
+
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->tags = json_encode($request->tags);
+        $product->user_id = $user_id;
+
+        $product->save();
+
+        return redirect()->route('products.index', $user_id);
     }
 }

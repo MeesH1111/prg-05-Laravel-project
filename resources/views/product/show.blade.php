@@ -18,7 +18,7 @@
         <p>{{ $review->description }}</p>
         <p>---------------------------------------------</p>
     @endforeach
-    <a href="{{ route('review.show', $review->id) }}">Schrijf een review</a>
+    <a href="{{ route('review.show', $item->id) }}">Schrijf een review</a>
     <div>
         <a href="{{ route('products.index') }}">Terug</a>
     </div>
