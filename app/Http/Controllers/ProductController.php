@@ -7,6 +7,8 @@ use App\Models\Item;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Category;
+
 
 class ProductController extends Controller
 {
@@ -28,13 +30,15 @@ class ProductController extends Controller
 
         $reviews = Review::where('item_id', $id)->get();
         $item = Item::find($id);
+        $category = Category::all();
 
-        return view('product.show', compact('item', 'reviews'));
+        return view('product.show', compact('item', 'reviews', 'category'));
     }
 
     public function create()
     {
-        return view('product.create');
+        $categories = Category::all();
+        return view('product.create', compact('categories'));
     }
 
     public function destroy(item $item) {
@@ -50,6 +54,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->tags = json_encode($request->tags);
         $product->user_id = $user_id;
+        $product->category_id = $request->category;
 
         $product->save();
 

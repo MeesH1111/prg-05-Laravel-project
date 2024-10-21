@@ -16,6 +16,8 @@ Route::resource('products', \App\Http\Controllers\ProductController::class);
 Route::get('products/create', [\App\Http\Controllers\ProductController::class, 'create'])->name('products.create')->middleware('auth');
 Route::resource('review', \App\Http\Controllers\ReviewController::class)->middleware('auth');
 
+Route::resource('category', \App\Http\Controllers\CategoryController::class)->middleware('auth');
+
 
 Route::get('/', function () {
     return view('welcome');

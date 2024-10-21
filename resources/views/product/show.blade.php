@@ -11,7 +11,7 @@
     <h1>{{ $item->name }}</h1>
     <li>ID: {{ $item->id }}</li>
     <li>Description: {{ $item->description }}</li>
-    <li>Tags: {{ $item->tags }}</li>
+    <li>Categorie: {{ $item->category ? $item->category->name : "Geen category" }}</li>
     <h2>Reviews:</h2>
     @foreach($reviews as $review)
         <h3>{{ $review->name }}</h3>

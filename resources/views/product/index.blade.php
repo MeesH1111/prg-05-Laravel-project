@@ -20,6 +20,8 @@
     @auth()
         <a href="{{ url('/dashboard') }}">Uitloggen</a>
         <a href="{{ route('products.create') }}">Item toevoegen</a>
+        <a href="{{ url('category/create') }}">Category toevoegen</a>
+
     @endauth
 
 
@@ -31,8 +33,7 @@
                 <li>Item name: {{ $item->name  }}</li>
                 <li>Geplaatst door: {{ $item->user ? $item->user->name : "Onbekend" }}</li>
                 <li>Geplaatst op: {{ $item->created_at }}</li>
-                <li>Tags: {{ $item->tags }}</li>
-
+                
                 <a href="{{ route('products.show', $item->id) }}">Inspecteren</a>
                 <p>---------------------------------------------<p>
 

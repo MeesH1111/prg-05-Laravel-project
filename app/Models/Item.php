@@ -18,4 +18,8 @@ class Item extends Model
     public function user() {
         return $this->belongsTo(User::class);
     }
+
+    public function category(): BelongsTo {
+        return $this->belongsTo(Category::class);
+    }
 }

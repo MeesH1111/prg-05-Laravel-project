@@ -18,8 +18,12 @@
     <label for="description">Description Item:</label>
     <input type="text" id="description" name="description">
 
-    <label for="tags">Tags Item:</label>
-    <input type="text" id="tags" name="tags">
+    <label for="category">Category Item:</label>
+    <select name="category" id="category">
+        @foreach($categories as $category)
+        <option value="{{ $category->id }}">{{$category->name}}</option>
+        @endforeach
+    </select>
 
     <button type="submit">Submit</button>
 

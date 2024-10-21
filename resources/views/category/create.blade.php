@@ -8,6 +8,18 @@
     <title>Document</title>
 </head>
 <body>
+<h1>Voeg een categorie toe</h1>
+<form action= "{{ route('category.store') }}" method="post">
+    @csrf
 
+    <label for="name">Category Name:</label>
+    <input type="text" id="name" name="name">
+
+    <button type="submit">Submit</button>
+
+    <div>
+        <a href="{{ route('products.index') }}">Terug</a>
+    </div>
+</form>
 </body>
 </html>
