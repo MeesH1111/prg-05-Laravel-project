@@ -1,3 +1,7 @@
+## 21-10-2024 | Maandag
+* Er kan nu een nieuwe categorie aangemaakt worden. Die categorie kan ook geselecteerd worden als er een nieuw item aangemaakt word
+* De categorie word getoond op de show pagina van het item
+
 ## 20-10-2024 | Zondag
 * Ervoor gezorgd dat de reviews bij een bepaald item alleen horen bij dat item. En niet dat een item alle reviews van alle items laat zien
 
