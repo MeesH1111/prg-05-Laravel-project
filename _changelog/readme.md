@@ -1,3 +1,7 @@
+## 22-10-2024 | Dinsdag
+* Ervoor gezorgd dat er nu een admin rol is. En dat de admin dingen kan die andere gebruikers niet kunnen 
+* Admin rol toegevoegd aan de database
+
 ## 21-10-2024 | Maandag
 * Er kan nu een nieuwe categorie aangemaakt worden. Die categorie kan ook geselecteerd worden als er een nieuw item aangemaakt word
 * De categorie word getoond op de show pagina van het item

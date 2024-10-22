@@ -13,8 +13,13 @@ class CategoryController extends Controller
     }
 
     public function create(){
+        if(\Auth::user()->is_admin){
+            return view('category.create');
+        }
+        else{
+            return redirect('/products');
+        }
 
-        return view('category.create');
     }
 
     public function store(Request $request){
