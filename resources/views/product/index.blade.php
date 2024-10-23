@@ -31,13 +31,24 @@
 
     @auth()
         <h1>ITEMS</h1>
-        <form action="{{ route('products.search') }}" method="GET">
-            <input type="text" name="search">
+        <form action="{{ route('products.index') }}" method="GET">
+            <div>
+
+            @foreach($categories as $catogory)
+                <input type="checkbox" name="category[{{ $catogory->id }}]" value="{{ $catogory->id }}">
+                <label>{{ $catogory->name }}
+                </label>
+            @endforeach()
+            </div>
+            <div>
+            <input type="text" name="search" placeholder="zoeken">
             <button type="submit">Zoeken</button>
+            </div>
         </form>
         @foreach($items as $item)
                 <li>Item name: {{ $item->name  }}</li>
                 <li>Geplaatst door: {{ $item->user ? $item->user->name : "Onbekend" }}</li>
+                <li>Categorie: {{ $item->category ? $item->category->name : "Geen categorie" }}</li>
                 <li>Geplaatst op: {{ $item->created_at }}</li>
 
                 <a href="{{ route('products.show', $item->id) }}">Inspecteren</a>
@@ -45,6 +56,7 @@
 
 
         @endforeach
+        <a href="{{ route('products.index') }}">Terug</a>
     @endauth
 
     @guest()

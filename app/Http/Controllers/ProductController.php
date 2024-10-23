@@ -9,19 +9,30 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
 
-
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $items = Item::all();
+        $query = Item::query();
         $user = Item::with('user')->get();
+        $categories = Category::all();
+
+        if(isset(request()->search) && (request()->search != null)){
+            $query->where('name', request()->search);
+        }
+
+       if(isset(request()->category) && (request()->category != null)){
+           $query->where('category_id',request()->category);
+
+       }
+
+       $items = $query->get();
 
         $company = 'Hogeschool Rotterdam';
-        return view('product.index', compact('company', 'items', 'user'));
+        return view('product.index', compact('company', 'items', 'user', 'categories'));
 
 
     }
@@ -60,4 +71,17 @@ class ProductController extends Controller
 
         return redirect()->route('products.index', $user_id);
     }
+
+    public function edit(item $item) {
+
+    }
+
+    public function update(Request $request, item $item) {
+
+    }
+
+    public  function search(Request $request) {
+
+    }
+
 }
