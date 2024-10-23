@@ -1,3 +1,7 @@
+## 23-10-2024 | Woensdag
+* Er kan nu gefilterd worden op verschillende categorieën 
+* Er is een zoekbalk waardoor de gebruiker specifieke dingen kan opzoeken
+
 ## 22-10-2024 | Dinsdag
 * Ervoor gezorgd dat er nu een admin rol is. En dat de admin dingen kan die andere gebruikers niet kunnen 
 * Admin rol toegevoegd aan de database
