@@ -1,3 +1,8 @@
+## 24-10-2024 | Donderdag
+* Er kan nu een item verwijdert worden. Als er reviews onder het item stonden worden die ook meteen verwijdert
+* Er kan nu een item worden bewerkt. Hierdoor kunnen de gegevens van het item worden aangepast.
+* Ervoor gezorgd dat alleen de admin of de maker van een bepaald item het item kunnen verwijderen en bewerken.
+
 ## 23-10-2024 | Woensdag
 * Er kan nu gefilterd worden op verschillende categorieën 
 * Er is een zoekbalk waardoor de gebruiker specifieke dingen kan opzoeken

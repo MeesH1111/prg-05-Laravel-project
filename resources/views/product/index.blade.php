@@ -51,12 +51,27 @@
                 <li>Categorie: {{ $item->category ? $item->category->name : "Geen categorie" }}</li>
                 <li>Geplaatst op: {{ $item->created_at }}</li>
 
-                <a href="{{ route('products.show', $item->id) }}">Inspecteren</a>
+
+                <div>
+
+                    <form action="{{ route('products.destroy', $item->id) }}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <a href="{{ route('products.show', $item->id) }}">Inspecteren</a>
+                        @if(\Auth::user()->is_admin || auth()->user()->id === $item->user_id)
+                         <a href="{{ route('products.edit', $item->id) }}">Edit</a>
+                            <button class="ms-1">Delete Item</button>
+                        @endif
+
+
+
+                    </form>
+                </div>
                 <p>---------------------------------------------<p>
 
 
         @endforeach
-        <a href="{{ route('products.index') }}">Terug</a>
+        <a href="{{ route('products.index') }}">Terug naar alle items</a>
     @endauth
 
     @guest()

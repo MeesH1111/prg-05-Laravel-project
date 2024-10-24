@@ -52,8 +52,12 @@ class ProductController extends Controller
         return view('product.create', compact('categories'));
     }
 
-    public function destroy(item $item) {
+    public function destroy(item $item, $id) {
+        $item = Item::where('id', $id )->firstOrFail();
 
+        $item->delete();
+
+        return redirect()->route('products.index')->with('success', 'Item has been deleted');
     }
 
     public function store(Request $request) {
@@ -63,7 +67,6 @@ class ProductController extends Controller
 
         $product->name = $request->name;
         $product->description = $request->description;
-        $product->tags = json_encode($request->tags);
         $product->user_id = $user_id;
         $product->category_id = $request->category;
 
@@ -72,12 +75,29 @@ class ProductController extends Controller
         return redirect()->route('products.index', $user_id);
     }
 
-    public function edit(item $item) {
+    public function edit(Item $item, $id) {
+        $categories = Category::all();
+        $item = Item::find($id);
 
+        return view('product.edit', compact('item', 'categories'));
     }
 
-    public function update(Request $request, item $item) {
+    public function update(Request $request, item $item, $id) {
 
+        $item = Item::find($id);
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+        ]);
+
+        $item->name = $request->input('name');
+        $item->description = $request->input('description');
+        $item->category_id = $request->input('category');
+        $item->save();
+
+        return redirect()->route('products.index')->with('success', 'Item succesvol bijgewerkt.');
     }
 
     public  function search(Request $request) {
