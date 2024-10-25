@@ -40,6 +40,15 @@ class ReviewController extends Controller
         $user_id = auth()->id();
         $item_id = $item->id;
 
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ],
+            [
+                'name.required' => 'Je review moet een naam hebben!',
+                'description.required' => 'Je review moet een description hebben!',
+            ]);
+
         $review = new Review;
 
         $review->name = $request->name;

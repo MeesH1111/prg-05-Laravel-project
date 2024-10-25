@@ -28,8 +28,8 @@ class CategoryController extends Controller
             'name' => 'required|unique:categories',
         ],
         [
-            'name.required' => "Je moet een naam geven",
-            'name.unique' => "Deze naam bestaat al",
+            'name.required' => "Je moet een naam geven!",
+            'name.unique' => "Deze naam bestaat al!",
         ]);
 
         $category = new Category();

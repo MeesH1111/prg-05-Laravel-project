@@ -33,6 +33,15 @@
             <button type="submit">Update</button>
 
             <div>
+                @if ($errors->any())
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+                        <ul class="mt-2">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <a href="{{ route('products.index') }}">Terug</a>
             </div>
         </form>

@@ -22,12 +22,10 @@ class ProductController extends Controller
 
         if(isset(request()->search) && (request()->search != null)){
             $query->where('name', request()->search);
+            $query->orWhere('description', request()->search);
         }
 
-       if(isset(request()->category) && (request()->category != null)){
-           $query->where('category_id',request()->category);
 
-       }
 
        $items = $query->get();
 
@@ -49,6 +47,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
+
         return view('product.create', compact('categories'));
     }
 
@@ -65,6 +64,17 @@ class ProductController extends Controller
         $product = new Item;
         $user_id = request()->user()->id;
 
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+        ],
+        [
+            'name.required' => 'Je item moet een naam hebben!',
+            'description.required' => 'Je item moet een description hebben!',
+            'category.required' => 'Je item moet een category hebben!',
+        ]);
+
         $product->name = $request->name;
         $product->description = $request->description;
         $product->user_id = $user_id;
@@ -79,6 +89,10 @@ class ProductController extends Controller
         $categories = Category::all();
         $item = Item::find($id);
 
+        if(auth()->user()->id !== $item->user_id) {
+            return redirect()->route('products.index')->with('error', 'You are not allowed to edit this item');
+        }
+
         return view('product.edit', compact('item', 'categories'));
     }
 
@@ -90,6 +104,11 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'category' => 'required',
+        ],
+        [
+            'name.required' => 'Je item moet een naam hebben!',
+            'description.required' => 'Je item moet een description hebben!',
+            'category.required' => 'Je item moet een category hebben!',
         ]);
 
         $item->name = $request->input('name');
