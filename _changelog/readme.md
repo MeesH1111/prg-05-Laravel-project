@@ -1,3 +1,9 @@
+## 25-10-2024 | Vrijdag
+* Validatie toegevoegd aan invoervelden
+* Foutmelding toegevoegd als een invoerveld niet is ingevuld of verkeerd is ingevuld
+* Ervoor gezorgd dat er nu ook gezocht kan worden naar item descriptions en niet alleen item names
+* Ervoor gezorgd dat er niet gedeeplinked kan worden naar de edit pagina van een item als dat item niet van die gebruiker is
+
 ## 24-10-2024 | Donderdag
 * Er kan nu een item verwijdert worden. Als er reviews onder het item stonden worden die ook meteen verwijdert
 * Er kan nu een item worden bewerkt. Hierdoor kunnen de gegevens van het item worden aangepast.
