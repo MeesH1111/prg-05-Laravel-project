@@ -19,9 +19,12 @@ Route::delete('products/destroy/{id}', [\App\Http\Controllers\ProductController:
 Route::get('products/{id}', [\App\Http\Controllers\ProductController::class, 'update'])->name('products.update')->middleware('auth');
 Route::resource('review', \App\Http\Controllers\ReviewController::class)->middleware('auth');
 
+
 Route::resource('category', \App\Http\Controllers\CategoryController::class)->middleware('auth');
 Route::get('category/create', [\App\Http\Controllers\CategoryController::class, 'create'])->name('category.create')->middleware('auth');
 
+
+Route::resource('admin', \App\Http\Controllers\AdminController::class)->middleware('auth');
 
 Route::get('/', function () {
     return view('welcome');

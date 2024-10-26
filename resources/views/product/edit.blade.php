@@ -16,8 +16,6 @@
             @method('PUT')
             <label for="name">Name Item: </label>
             <input type="text" id="name" name="name" value="{{ $item->name }}">
-{{--           Het lijkt wel alsof $item->name en alle ander $items->... NIET worden meegegeven --}}
-
             <label for="description">Description Item:</label>
             <input type="text" id="description" name="description" value="{{ $item->description }}">
 

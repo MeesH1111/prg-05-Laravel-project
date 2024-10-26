@@ -25,6 +25,13 @@ class ProductController extends Controller
             $query->orWhere('description', request()->search);
         }
 
+        if(isset(request()->category) && (request()->category != null)){
+            $query->where('category_id',request()->category);
+
+        }
+
+
+
 
 
        $items = $query->get();

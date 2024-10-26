@@ -1,3 +1,6 @@
+## 26-10-2024 | Zaterdag
+* Een webpagina gemaakt voor alleen de admin. Waarin alle gegevens van de Items, Users en Categories bekeken kunnen wordne.
+
 ## 25-10-2024 | Vrijdag
 * Validatie toegevoegd aan invoervelden
 * Foutmelding toegevoegd als een invoerveld niet is ingevuld of verkeerd is ingevuld

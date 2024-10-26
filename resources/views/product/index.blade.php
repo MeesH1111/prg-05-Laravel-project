@@ -6,7 +6,7 @@
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Items Overzicht</title>
-    <script src="https://cdn.tailwindcss.com"></script> <!-- Voeg Tailwind toe -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-900">
 
@@ -28,6 +28,7 @@
                 <a href="{{ route('products.create') }}" class="ml-4 text-gray-700 hover:text-blue-600">Item toevoegen</a>
                 @if(auth()->user()->is_admin)
                     <a href="{{ url('category/create') }}" class="ml-4 text-gray-700 hover:text-blue-600">Category toevoegen</a>
+                    <a href="{{ url('admin') }}" class="ml-4 text-gray-700 hover:text-blue-600">Admin Dashboard</a>
                 @endif
             @endauth
         </div>
