@@ -40,8 +40,8 @@
                 <p class="text-sm text-gray-600">{{ $item->updated_at->format('d-m-Y') }}</p>
 
                 <div class="space-x-4 flex justify-center">
-                        <a href="{{ route('products.edit', $item->id) }}" class="text-yellow-600 hover:underline">Bewerken</a>
-                        <form action="{{ route('products.destroy', $item->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Weet je zeker dat je dit item wilt verwijderen?');">
+                        <a href="{{ route('admin.editItems', $item->id) }}" class="text-yellow-600 hover:underline">Bewerken</a>
+                        <form action="{{ route('admin.deleteItems', $item->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Weet je zeker dat je dit item wilt verwijderen?');">
                             @method('delete')
                             @csrf
                             <button type="submit" class="bg-red-500 hover:bg-red-400 text-white font-bold py-1.5 px-3 border-b-4 border-red-700 hover:border-red-500 rounded">Verwijderen</button>
@@ -79,8 +79,8 @@
                 <p></p>
                 <p></p>
 
-                <div class="space-x-4 flex justify-center">)
-                        <a href="{{ route('profile.edit', $user->id) }}" class="text-yellow-600 hover:underline">Bewerken</a>
+                <div class="space-x-4 flex justify-center">
+                        <a href="{{ route('profile.edit', ['user' => $user->id]) }}" class="text-yellow-600 hover:underline">Bewerken</a>
                         <form action="{{ route('profile.destroy', $user->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Weet je zeker dat je dit item wilt verwijderen?');">
                             @method('delete')
                             @csrf

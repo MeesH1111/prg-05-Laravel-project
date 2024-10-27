@@ -26,5 +26,47 @@ class AdminController extends Controller
             return redirect('/products');
         }
     }
+
+    public function toggleVisibility(Item $item, $id) {
+
+    }
+
+    public function editItems(Item $item, Request $request, $id) {
+        $categories = Category::all();
+        $item = Item::find($id);
+
+        return view('admin.items.edit', compact('item', 'categories'));
+    }
+
+    public function updateItems(Item $item, Request $request, $id) {
+
+        $item = Item::find($id);
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+        ],
+            [
+                'name.required' => 'Je item moet een naam hebben!',
+                'description.required' => 'Je item moet een description hebben!',
+                'category.required' => 'Je item moet een category hebben!',
+            ]);
+
+        $item->name = $request->input('name');
+        $item->description = $request->input('description');
+        $item->category_id = $request->input('category');
+        $item->save();
+
+        return redirect()->route('admin.index');
+    }
+
+    public function deleteItems(Item $item, $id) {
+        $item = Item::where('id', $id )->firstOrFail();
+
+        $item->delete();
+
+        return redirect()->route('admin.index');
+    }
 }
 
