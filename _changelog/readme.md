@@ -1,5 +1,6 @@
 ## 27-10-2024 | Zondag
-* Ervoot gezorgd dat de admin items kan editen en deleten vanaf de admin dashboard pagina. En ook weer teruggestuurd wordt naar de admin dashboard pagina
+* Ervoor gezorgd dat de admin items kan editen en deleten vanaf de admin dashboard pagina. En ook weer teruggestuurd wordt naar de admin dashboard pagina
+* Ervoor gezorgd dat de admin categories kan editen.  
 
 ## 26-10-2024 | Zaterdag
 * Een webpagina gemaakt voor alleen de admin. Waarin alle gegevens van de Items, Users en Categories bekeken kunnen wordne.

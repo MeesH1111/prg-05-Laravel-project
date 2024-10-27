@@ -68,5 +68,40 @@ class AdminController extends Controller
 
         return redirect()->route('admin.index');
     }
+
+    public function editCategory(Category $category, Request $request){
+
+
+
+        return view('admin.category.edit', compact('category'));
+
+
+    }
+
+    public function updateCategory(Category $category, Request $request) {
+
+       $request->validate([
+           'name' => 'required',
+       ],
+       [
+           'name.required' => 'De category moet een naam hebben!',
+           'name.unique' => 'De category bestaat al!',
+       ]);
+
+        $category->name = $request->input('name');
+        $category->save();
+
+
+        return redirect()->route('admin.index');
+    }
+
+    public function deleteCategory($id)
+    {
+        $category = Category::where('id', $id )->firstOrFail();
+
+        $category->delete();
+
+        return redirect()->route('admin.index');
+    }
 }
 

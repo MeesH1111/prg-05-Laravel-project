@@ -29,6 +29,9 @@ Route::post('/admin/{id}/toggle-visibility', [\App\Http\Controllers\AdminControl
 Route::get('/admin/{id}/editItems', [\App\Http\Controllers\AdminController::class, 'editItems'])->name('admin.editItems')->middleware('auth');
 Route::put('/admin/{id}/updateItems', [\App\Http\Controllers\AdminController::class, 'updateItems'])->name('admin.updateItems')->middleware('auth');
 Route::delete('/admin/{id}/deleteItems', [\App\Http\Controllers\AdminController::class, 'deleteItems'])->name('admin.deleteItems')->middleware('auth');
+Route::get('/admin/{category}/editCategory', [\App\Http\Controllers\AdminController::class, 'editCategory'])->name('admin.editCategory')->middleware('auth');
+Route::put('/admin/{category}/updateCategory', [\App\Http\Controllers\AdminController::class, 'updateCategory'])->name('admin.updateCategory')->middleware('auth');
+Route::delete('/admin/{category}/deleteCategory', [\App\Http\Controllers\AdminController::class, 'deleteCategory'])->name('admin.deleteCategory')->middleware('auth');
 
 Route::get('/', function () {
     return view('welcome');
