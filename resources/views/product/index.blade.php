@@ -74,7 +74,6 @@
             </div>
         </form>
 
-        <!-- Lijst van items -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($items as $item)
                 @if($item->is_visible !== 0)
@@ -88,7 +87,9 @@
                     <div class="mt-4 space-x-4">
                         <a href="{{ route('products.show', $item->id) }}" class="text-blue-600 hover:underline">Inspecteren</a>
                         @if(auth()->user()->is_admin || auth()->user()->id === $item->user_id)
+                            @if($user->items()->where('user_id', $user->id)->count() >= 5)
                             <a href="{{ route('products.edit', $item->id) }}" class="text-yellow-600 hover:underline">Bewerken</a>
+                            @endif
                             <form action="{{ route('products.destroy', $item->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Weet je zeker dat je dit item wilt verwijderen?');">
                                 @method('delete')
                                 @csrf

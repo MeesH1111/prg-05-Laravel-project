@@ -1,6 +1,7 @@
 ## 28-10-2024 | Maandag
 * De admin kan de zichtbaarheid van de items aanpassen vanaf de admin dashboard pagina. Door middel van een functie in de AdminController en een form met 'method='POST''
 * Validatie toegevoegd aan de 'item edit' en 'category edit' pagina van de admin
+* Diepere validatie toegevoegd aan het editen van items. Pas als een gebruiker vijf items of meer op de website heeft staan kan het die items bewerken
 
 ## 27-10-2024 | Zondag
 * Ervoor gezorgd dat de admin items kan editen en deleten vanaf de admin dashboard pagina. En ook weer teruggestuurd wordt naar de admin dashboard pagina

@@ -17,7 +17,8 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $query = Item::query();
-        $user = Item::with('user')->get();
+//        $user = Item::with('user')->get();
+        $user = auth()->user();
         $categories = Category::all();
 
         if(isset(request()->search) && (request()->search != null)){
@@ -89,8 +90,9 @@ class ProductController extends Controller
     public function edit(Item $item, $id) {
         $categories = Category::all();
         $item = Item::find($id);
+        $user = auth()->user();
 
-        if(auth()->user()->id !== $item->user_id) {
+        if(auth()->user()->id !== $item->user_id || $user->items()->where('user_id', $user->id)->count() <= 4) {
             return redirect()->route('products.index')->with('error', 'You are not allowed to edit this item');
         }
 
