@@ -40,7 +40,11 @@ class AdminController extends Controller
         $categories = Category::all();
         $item = Item::find($id);
 
-        return view('admin.items.edit', compact('item', 'categories'));
+        if(\Auth::user()->is_admin) {
+            return view('admin.items.edit', compact('item', 'categories'));
+        } else {
+            return redirect('/products');
+        }
     }
 
     public function updateItems(Item $item, Request $request, $id) {
@@ -77,8 +81,11 @@ class AdminController extends Controller
     public function editCategory(Category $category, Request $request){
 
 
-
-        return view('admin.category.edit', compact('category'));
+        if (\Auth::user()->is_admin) {
+            return view('admin.category.edit', compact('category'));
+        } else {
+            return redirect('/products');
+        }
 
 
     }
