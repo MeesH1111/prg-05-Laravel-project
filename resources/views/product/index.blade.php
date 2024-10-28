@@ -77,6 +77,7 @@
         <!-- Lijst van items -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($items as $item)
+                @if($item->is_visible !== 0)
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h2 class="text-xl font-bold text-gray-800">{{ $item->name }}</h2>
                     <h3 class="font-bold text-gray-800">{{ $item->description }}</h3>
@@ -96,17 +97,18 @@
                         @endif
                     </div>
                 </div>
+                @endif
             @endforeach
         </div>
 
-        <!-- Terug naar alle items -->
+        @if(isset(request()->search) && (request()->search != null) || isset(request()->category) && (request()->category != null))
         <div class="mt-8">
             <a href="{{ route('products.index') }}" class="text-blue-600 hover:underline">Terug naar alle items</a>
         </div>
+            @endif
     </div>
 @endauth
 
-<!-- Content voor niet-ingelogde gebruikers -->
 @guest
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold mb-6">ITEMS</h1>

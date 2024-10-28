@@ -27,7 +27,12 @@ class AdminController extends Controller
         }
     }
 
-    public function toggleVisibility(Item $item, $id) {
+    public function toggleVisibility(Item $item) {
+
+        $item->is_visible = !$item->is_visible;
+        $item->save();
+
+        return redirect()->back();
 
     }
 

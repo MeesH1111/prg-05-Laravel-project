@@ -30,16 +30,10 @@ class ProductController extends Controller
 
         }
 
-
-
-
-
        $items = $query->get();
 
         $company = 'Hogeschool Rotterdam';
         return view('product.index', compact('company', 'items', 'user', 'categories'));
-
-
     }
 
     public function show(string $id) {
