@@ -1,20 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Admin Dashboard</title>
-</head>
-<body class="bg-gray-100">
-<nav class="bg-white shadow-md py-4">
-    <div class="container mx-auto flex justify-between items-center px-4">
-    <a href="{{ url('/products') }}" class="text-gray-700 hover:text-blue-600">Products</a>
-    </div>
-</nav>
-<main class="p-6">
+<x-layout>
     <h1 class="text-3xl font-bold mb-6">Admin Dashboard</h1>
     <h2 class="text-2xl font-semibold m-4 p-6">Items</h2>
 
@@ -140,6 +124,4 @@
             </div>
         @endforeach
     </div>
-</main>
-</body>
-</html>
+</x-layout>

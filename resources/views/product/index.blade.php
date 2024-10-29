@@ -1,41 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Items Overzicht</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-900">
-
-<!-- Navigatie -->
-<nav class="bg-white shadow-md py-4">
-    <div class="container mx-auto flex justify-between items-center px-4">
-        <div class="space-x-4">
-            <a href="{{ url('/') }}" class="text-gray-700 hover:text-blue-600">Welcome</a>
-            <a href="{{ url('/about-us') }}" class="text-gray-700 hover:text-blue-600">About us</a>
-            <a href="{{ url('/contact') }}" class="text-gray-700 hover:text-blue-600">Contact</a>
-            <a href="{{ url('/products') }}" class="text-gray-700 hover:text-blue-600">Products</a>
-        </div>
-        <div>
-            @guest
-                <a href="{{ url('/login') }}" class="text-gray-700 hover:text-blue-600">Inloggen</a>
-            @endguest
-            @auth
-                <a href="{{ url('/dashboard') }}" class="text-gray-700 hover:text-blue-600">Dashboard</a>
-                <a href="{{ route('products.create') }}" class="ml-4 text-gray-700 hover:text-blue-600">Item toevoegen</a>
-                @if(auth()->user()->is_admin)
-                    <a href="{{ url('category/create') }}" class="ml-4 text-gray-700 hover:text-blue-600">Category toevoegen</a>
-                    <a href="{{ url('admin') }}" class="ml-4 text-gray-700 hover:text-blue-600">Admin Dashboard</a>
-                @endif
-            @endauth
-        </div>
-    </div>
-</nav>
-
-<!-- Content voor ingelogde gebruikers -->
+<x-layout>
 @auth
     <div class="container mx-auto px-4 py-8">
         @if ($errors->any())
@@ -49,7 +12,6 @@
         @endif
         <h1 class="text-3xl font-bold mb-6">ITEMS</h1>
 
-        <!-- Zoek- en categorie-filter -->
         <form action="{{ route('products.index') }}" method="GET" class="bg-white p-6 rounded-lg shadow-md mb-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
@@ -87,7 +49,7 @@
                     <div class="mt-4 space-x-4">
                         <a href="{{ route('products.show', $item->id) }}" class="text-blue-600 hover:underline">Inspecteren</a>
                         @if(auth()->user()->is_admin || auth()->user()->id === $item->user_id)
-                            @if($user->items()->where('user_id', $user->id)->count() >= 5)
+                            @if($user->items()->where('user_id', $user->id)->count() >= 5 || $user->is_admin)
                             <a href="{{ route('products.edit', $item->id) }}" class="text-yellow-600 hover:underline">Bewerken</a>
                             @endif
                             <form action="{{ route('products.destroy', $item->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Weet je zeker dat je dit item wilt verwijderen?');">
@@ -117,5 +79,4 @@
     </div>
 @endguest
 
-</body>
-</html>
+</x-layout>
