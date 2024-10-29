@@ -1,3 +1,7 @@
+## 29-10-2024 | Dinsdag
+* Alles in layouts en components gezet en daarbij CSS toegevoegd aan alle pagina's
+* Gefixt dat de admin alle items kan editen ook als hij geen vijf items op de website heeft staan
+
 ## 28-10-2024 | Maandag
 * De admin kan de zichtbaarheid van de items aanpassen vanaf de admin dashboard pagina. Door middel van een functie in de AdminController en een form met 'method='POST''
 * Validatie toegevoegd aan de 'item edit' en 'category edit' pagina van de admin

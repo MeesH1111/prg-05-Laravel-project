@@ -92,11 +92,13 @@ class ProductController extends Controller
         $item = Item::find($id);
         $user = auth()->user();
 
-        if(auth()->user()->id !== $item->user_id || $user->items()->where('user_id', $user->id)->count() <= 4) {
-            return redirect()->route('products.index')->with('error', 'You are not allowed to edit this item');
+        if(auth()->user()->id === $item->user_id && $user->items()->where('user_id', $user->id)->count() >= 5) {
+            return view('product.edit', compact('item', 'categories'));
+        } elseif ($user->is_admin) {
+            return view('product.edit', compact('item', 'categories'));
         }
 
-        return view('product.edit', compact('item', 'categories'));
+        return redirect()->route('products.index')->with('error', 'You are not allowed to edit this item');
     }
 
     public function update(Request $request, item $item, $id) {
