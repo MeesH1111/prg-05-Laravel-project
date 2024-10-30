@@ -1,4 +1,7 @@
 ## 29-10-2024 | Dinsdag
+* Extra valdiatie en security toegevoegd
+
+## 29-10-2024 | Dinsdag
 * Alles in layouts en components gezet en daarbij CSS toegevoegd aan alle pagina's
 * Gefixt dat de admin alle items kan editen ook als hij geen vijf items op de website heeft staan
 
