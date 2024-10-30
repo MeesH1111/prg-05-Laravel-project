@@ -41,8 +41,8 @@ class ReviewController extends Controller
         $item_id = $item->id;
 
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
+            'name' => 'required|string|max:50',
+            'description' => 'required|string|max:255',
         ],
             [
                 'name.required' => 'Je review moet een naam hebben!',

@@ -17,7 +17,6 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $query = Item::query();
-//        $user = Item::with('user')->get();
         $user = auth()->user();
         $categories = Category::all();
 
@@ -40,6 +39,7 @@ class ProductController extends Controller
     public function show(string $id) {
 
         $reviews = Review::where('item_id', $id)->get();
+
         $item = Item::find($id);
         $category = Category::all();
 
@@ -67,9 +67,9 @@ class ProductController extends Controller
         $user_id = request()->user()->id;
 
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'category' => 'required',
+            'name' => 'required|string|max:50',
+            'description' => 'required|string|max:255',
+            'category' => 'required|exists:categories,id',
         ],
         [
             'name.required' => 'Je item moet een naam hebben!',
@@ -106,9 +106,9 @@ class ProductController extends Controller
         $item = Item::find($id);
 
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'category' => 'required',
+            'name' => 'required|string|max:50',
+            'description' => 'required|string|max:255',
+            'category' => 'required|exists:categories,id',
         ],
         [
             'name.required' => 'Je item moet een naam hebben!',

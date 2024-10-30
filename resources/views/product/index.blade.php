@@ -29,8 +29,11 @@
                 <div class="col-span-2">
                     <h2 class="font-semibold text-gray-700 mb-2">Zoek op naam:</h2>
                     <div class="flex">
-                        <input type="text" name="search" placeholder="Zoeken..." class="border border-gray-300 p-2 rounded-l-lg flex-grow">
-                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r-lg">Zoeken</button>
+                        <form>
+                            @csrf
+                            <input type="text" name="search" placeholder="Zoeken..." class="border border-gray-300 p-2 rounded-l-lg flex-grow">
+                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r-lg">Zoeken</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -41,9 +44,9 @@
                 @if($item->is_visible !== 0)
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h2 class="text-xl font-bold text-gray-800">{{ $item->name }}</h2>
-                    <h3 class="font-bold text-gray-800">{{ $item->description }}</h3>
-                    <p class="text-sm text-gray-600">Geplaatst door: {{ $item->user ? $item->user->name : "Onbekend" }}</p>
+                    <h3 class="font-medium text-gray-800">{{ $item->description }}</h3>
                     <p class="text-sm text-gray-600">Categorie: {{ $item->category ? $item->category->name : "Geen categorie" }}</p>
+                    <p class="text-sm text-gray-600">Geplaatst door: {{ $item->user ? $item->user->name : "Onbekend" }}</p>
                     <p class="text-sm text-gray-600">Geplaatst op: {{ $item->created_at->format('d-m-Y') }}</p>
 
                     <div class="mt-4 space-x-4">
