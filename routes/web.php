@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 //    ]);
 //})->name('about-us.hogeschool');
 
-Route::get('/about-us', [\App\Http\Controllers\AboutUsController::class, 'index'])->name('about-us');
+Route::get('/', [\App\Http\Controllers\AboutUsController::class, 'index'])->name('about-us');
 Route::get('/contact/{id?}', [\App\Http\Controllers\ContactController::class, 'index']);
 Route::resource('products', \App\Http\Controllers\ProductController::class);
 Route::get('products/create', [\App\Http\Controllers\ProductController::class, 'create'])->name('products.create')->middleware('auth');
@@ -33,9 +33,9 @@ Route::get('/admin/{category}/editCategory', [\App\Http\Controllers\AdminControl
 Route::put('/admin/{category}/updateCategory', [\App\Http\Controllers\AdminController::class, 'updateCategory'])->name('admin.updateCategory')->middleware('auth');
 Route::delete('/admin/{category}/deleteCategory', [\App\Http\Controllers\AdminController::class, 'deleteCategory'])->name('admin.deleteCategory')->middleware('auth');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

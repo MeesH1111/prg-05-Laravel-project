@@ -12,7 +12,7 @@
     <nav class="bg-white shadow-md py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
             <div class="space-x-4">
-                <x-nav-link href="/about-us" class="ml-4 text-gray-700 hover:text-blue-600">About us</x-nav-link>
+                <x-nav-link href="/" class="ml-4 text-gray-700 hover:text-blue-600">About us</x-nav-link>
                 <x-nav-link href="/products" class="ml-4 text-gray-700 hover:text-blue-600">Products</x-nav-link>
             </div>
             <div>

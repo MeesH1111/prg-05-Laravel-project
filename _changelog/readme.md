@@ -1,4 +1,8 @@
-## 29-10-2024 | Dinsdag
+## 30-10-2024 | Woensdag
+* Laatste dingetjes gedaan aan de website. Er is nu een uitgebreidere about-us pagina die de gebruiker verwelkomt en informatie geeft over de website. 
+* De dashboard pagina iets veraderd zodat je nu makkelijker terug kan gaan naar de andere pagina's
+
+## 30-10-2024 | Woensdag
 * Extra valdiatie en security toegevoegd
 
 ## 29-10-2024 | Dinsdag
