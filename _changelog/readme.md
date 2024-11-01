@@ -1,4 +1,8 @@
-## 30-10-2024 | Woensdag
+## 01-11-2024 | Vrijdag
+* Alle code langsgegaan en onnodige code weggehaald. En kleine verbeteringen gedaan aan een paar pagina's 
+* ERD Geüpdate
+
+## 31-10-2024 | Donderdag
 * Laatste dingetjes gedaan aan de website. Er is nu een uitgebreidere about-us pagina die de gebruiker verwelkomt en informatie geeft over de website. 
 * De dashboard pagina iets veraderd zodat je nu makkelijker terug kan gaan naar de andere pagina's
 
@@ -93,7 +97,7 @@ Dit laat nu een gedetaileerd overzicht zien van het item
 | alle items kunnen bewerken en verwijderen                                             |                                             Als er als admin is ingelogd staat er een bewerk knop bij alle items                                              |      M |
 
 #### ERD:
-![ProjectERDv3.png](/_changelog/images/ProjectERDv3.png)
+![ProjectERDv4.png](/_changelog/images/ProjectERDv4.png)
 
 
 
