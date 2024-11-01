@@ -13,6 +13,7 @@ Route::delete('products/destroy/{id}', [\App\Http\Controllers\ProductController:
 Route::get('products/{id}', [\App\Http\Controllers\ProductController::class, 'update'])->name('products.update')->middleware('auth');
 
 Route::resource('review', \App\Http\Controllers\ReviewController::class)->middleware('auth');
+Route::post('products/{item}/reviews', [\App\Http\Controllers\ReviewController::class, 'store'])->name('products.reviews.store')->middleware('auth');
 
 
 Route::resource('category', \App\Http\Controllers\CategoryController::class)->middleware('auth');

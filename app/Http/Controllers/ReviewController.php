@@ -16,7 +16,6 @@ class ReviewController extends Controller
      */
     public function index()
     {
-
     }
 
     /**
@@ -24,21 +23,14 @@ class ReviewController extends Controller
      */
     public function create($id)
     {
-        $Review = Review::find($id);
-        $item = Item::find($id);
-        return view('review.create', compact('Review', 'item'));
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request, Item $item)
     {
-
-        $item = Item::find($request->id);
-
-        $user_id = auth()->id();
-        $item_id = $item->id;
 
         $request->validate([
             'name' => 'required|string|max:50',
@@ -49,12 +41,12 @@ class ReviewController extends Controller
                 'description.required' => 'Je review moet een description hebben!',
             ]);
 
-        $review = new Review;
+        $review = new Review();
 
-        $review->name = $request->name;
-        $review->description = $request->description;
-        $review->user_id = $user_id;
-        $review->item_id = $item_id;
+        $review->name = $request->get('name');
+        $review->description = $request->get('description');
+        $review->user_id = auth()->user()->id;
+        $review->item_id = $item->id;
 
         $review->save();
 

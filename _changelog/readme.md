@@ -1,6 +1,7 @@
 ## 01-11-2024 | Vrijdag
 * Alle code langsgegaan en onnodige code weggehaald. En kleine verbeteringen gedaan aan een paar pagina's 
 * ERD Geüpdate
+* Reviews schrijven gefixt. Het schrijven van een review werkte niet meer maar dat is nu opgelost
 
 ## 31-10-2024 | Donderdag
 * Laatste dingetjes gedaan aan de website. Er is nu een uitgebreidere about-us pagina die de gebruiker verwelkomt en informatie geeft over de website. 

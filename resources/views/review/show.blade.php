@@ -2,7 +2,7 @@
     <div class="max-w-lg mx-auto mt-10 bg-white p-8 rounded-lg shadow-md">
         <h1 class="text-2xl font-semibold text-gray-800 mb-6">Schrijf een review voor {{ $item->name }}</h1>
 
-        <form action="{{ url('products/' . $item->id . '/review') }}" method="POST" class="space-y-6">
+        <form action="{{ route('products.reviews.store', $item->id) }}" method="POST" class="space-y-6">
             @csrf
 
             <div>
@@ -23,5 +23,14 @@
             Terug
         </a>
     </div>
+    @if ($errors->any())
+        <div class="mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+            <ul class="space-y-1">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </x-layout>
 
