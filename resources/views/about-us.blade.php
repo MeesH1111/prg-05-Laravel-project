@@ -21,7 +21,7 @@
         @endauth
 
         @guest()
-            <h1 class="text-3xl font-bold text-gray-800 mb-4">Welkom op onze website!</h1>
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Welkom op deze website!</h1>
                 <div class="text-gray-700 leading-relaxed">
                     <p class="pb-6">
                         Dit is een website waar je je mooie verzameling aan spullen of persoonlijke items kan delen met anderen.

@@ -19,6 +19,9 @@
 
             <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Verzend Review</button>
         </form>
+        <a href="{{ route('products.show', $item->id) }}" class="ml-4 inline-block text-gray-600 hover:underline">
+            Terug
+        </a>
     </div>
 </x-layout>
 

@@ -53,7 +53,7 @@
                         <a href="{{ route('products.show', $item->id) }}" class="text-blue-600 hover:underline">Inspecteren</a>
                         @if(auth()->user()->is_admin || auth()->user()->id === $item->user_id)
                             @if($user->items()->where('user_id', $user->id)->count() >= 5 || $user->is_admin)
-                            <a href="{{ route('products.edit', $item->id) }}" class="text-yellow-600 hover:underline">Bewerken</a>
+                                <a href="{{ route('products.edit', $item->id) }}" class="text-yellow-600 hover:underline">Bewerken</a>
                             @endif
                             <form action="{{ route('products.destroy', $item->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Weet je zeker dat je dit item wilt verwijderen?');">
                                 @method('delete')
@@ -71,7 +71,7 @@
         <div class="mt-8">
             <a href="{{ route('products.index') }}" class="text-blue-600 hover:underline">Terug naar alle items</a>
         </div>
-            @endif
+        @endif
     </div>
 @endauth
 

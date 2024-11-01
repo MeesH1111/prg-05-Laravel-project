@@ -1,6 +1,6 @@
 <x-layout>
     <div class="max-w-md mx-auto mt-10 bg-white p-8 rounded-lg shadow-md">
-        <h1 class="text-2xl font-semibold text-gray-800 mb-6">Bewerk Item</h1>
+        <h1 class="text-2xl font-semibold text-gray-800 mb-6">Bewerk een item</h1>
 
         <form action="{{ route('admin.updateItems', $item->id) }}" method="POST" class="space-y-6">
             @csrf
@@ -32,7 +32,7 @@
 
             <div class="flex items-center justify-between">
                 <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Update</button>
-                <a href="{{ route('products.index') }}" class="text-gray-600 hover:text-gray-800 hover:underline">Terug</a>
+                <a href="{{ route('admin.index') }}" class="text-gray-600 hover:text-gray-800 hover:underline">Terug</a>
             </div>
 
             <div class="mt-4">

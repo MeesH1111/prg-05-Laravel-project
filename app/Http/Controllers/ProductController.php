@@ -26,14 +26,12 @@ class ProductController extends Controller
         }
 
         if(isset(request()->category) && (request()->category != null)){
-            $query->where('category_id',request()->category);
-
+            $query->where('category_id', request()->category);
         }
 
-       $items = $query->get();
+        $items = $query->get();
 
-        $company = 'Hogeschool Rotterdam';
-        return view('product.index', compact('company', 'items', 'user', 'categories'));
+        return view('product.index', compact( 'items', 'user', 'categories'));
     }
 
     public function show(string $id) {
@@ -53,12 +51,12 @@ class ProductController extends Controller
         return view('product.create', compact('categories'));
     }
 
-    public function destroy(item $item, $id) {
+    public function destroy($id) {
         $item = Item::where('id', $id )->firstOrFail();
 
         $item->delete();
 
-        return redirect()->route('products.index')->with('success', 'Item has been deleted');
+        return redirect()->route('products.index');
     }
 
     public function store(Request $request) {
@@ -94,11 +92,11 @@ class ProductController extends Controller
 
         if(auth()->user()->id === $item->user_id && $user->items()->where('user_id', $user->id)->count() >= 5) {
             return view('product.edit', compact('item', 'categories'));
-        } elseif ($user->is_admin) {
+        } elseif (\Auth::user()->is_admin) {
             return view('product.edit', compact('item', 'categories'));
         }
 
-        return redirect()->route('products.index')->with('error', 'You are not allowed to edit this item');
+        return redirect()->route('products.index');
     }
 
     public function update(Request $request, item $item, $id) {
@@ -121,7 +119,7 @@ class ProductController extends Controller
         $item->category_id = $request->input('category');
         $item->save();
 
-        return redirect()->route('products.index')->with('success', 'Item succesvol bijgewerkt.');
+        return redirect()->route('products.index');
     }
 
     public  function search(Request $request) {

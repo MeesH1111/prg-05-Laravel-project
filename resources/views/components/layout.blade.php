@@ -25,7 +25,7 @@
                 @if(auth()->user()->is_admin)
                     <x-nav-link href="{{ url('category/create') }}" class="ml-4 text-gray-700 hover:text-blue-600">Category toevoegen</x-nav-link>
                     <x-nav-link href="{{ url('admin') }}" class="ml-4 text-gray-700 hover:text-blue-600">Admin Dashboard</x-nav-link>
-                    @endif
+                @endif
             @endauth
             </div>
         </div>
