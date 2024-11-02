@@ -38,9 +38,10 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
+                <a href="/register" class="pl-4 underline hover:text-gray-600">Nog geen account?</a>
 
         <div>
-            <a href="/register">Nog geen account?</a>
+
         </div>
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
